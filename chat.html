@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Chat - Anti-Sleep</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Enter Details</h1>
+    </header>
+
+    <section class="content">
+        <h2>Register Your Car</h2>
+        <input type="text" id="userName" placeholder="Enter Your Name">
+        <input type="text" id="carPlate" placeholder="Enter Car Number Plate">
+        <input type="text" id="atpNumber" placeholder="Enter ATP Number">
+        <button onclick="registerUser()">Proceed</button>
+    </section>
+
+    <section class="content chat-box" id="chatBox" style="display: none;">
+        <h2>Emergency Chat</h2>
+        <div id="chatMessages" class="chat-window"></div>
+    </section>
+
+    <footer>
+        <p>Project by: Shivam, Darshil, Amey, and Naitik</p>
+    </footer>
+
+    <!-- Link external JavaScript file -->
+    <script src="chat.js"></script>
+</body>
+</html>
