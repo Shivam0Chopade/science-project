@@ -2,6 +2,7 @@ let beepSound = new Audio("beep-beep-beep-beep-80262.mp3");
 let instructionText = document.getElementById("instruction");
 let activateBtn = document.getElementById("activateBtn");
 let resetBtn = document.getElementById("resetBtn");
+let gameVideo = document.getElementById("gameVideo"); // Get video element
 
 let beepInterval;
 
@@ -26,6 +27,11 @@ function startExperiment() {
 
     activateBtn.style.display = "none";
     resetBtn.style.display = "inline-block";
+
+    if (gameVideo) {
+        gameVideo.currentTime = 0; // Restart video
+        gameVideo.play(); // Play video
+    }
 
     setTimeout(() => {
         instructionText.innerHTML = "Beep, Beep, Beep"; 
@@ -55,6 +61,11 @@ function resetExperiment() {
     instructionText.innerHTML = "Your car has stopped. Stay alert and drive safely! 😊";
     
     stopBeepSound();
+
+    if (gameVideo) {
+        gameVideo.pause(); // Stop video
+        gameVideo.currentTime = 0; // Reset video to start
+    }
 
     activateBtn.style.display = "inline-block";
     resetBtn.style.display = "none";
